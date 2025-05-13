@@ -1,0 +1,5 @@
+.env
+node_modules
+./python/venv
+tmkx
+to_arnav
