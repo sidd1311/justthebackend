@@ -114,14 +114,13 @@ const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
 // const checkRoute = require('./routes/check-middle');
 const fpswrd = require('./routes/forgot-password');
-const discussionRoute = require('./routes/discussion');
 const productRoute = require('./routes/addproducts');
 const prescRoute = require('./routes/prescriptionhistory');
 const reviewRoute = require('./routes/review-product');
 const getProduct = require('./routes/products');
 const cartRoute = require('./routes/cart');
-const appointmentRoute = require('./routes/doctor-available');
-const doctorRoute = require('./routes/doctorreg');
+
+
 const face_model = require('./routes/face-detection-model');
 const orderRoute = require('./routes/orders');
 const healthRoute = require('./routes/health');
@@ -139,7 +138,6 @@ app.use('/',
   loginRoute, 
   orderRoute, 
   cartRoute, 
-  appointmentRoute, 
   fpswrd, 
   productRoute, 
   getProduct, 
@@ -148,8 +146,6 @@ app.use('/',
   chatRoute,
   useridRoute,
 );
-app.use('/discuss', discussionRoute);
-app.use('/doc', doctorRoute);
 app.use('/aiface', face_model);
 app.use('/aichat', aichatbot)
 // Use the chatRouter for chat-related routes

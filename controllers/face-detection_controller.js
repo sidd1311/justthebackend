@@ -473,8 +473,4 @@ function getPrimaryConfidence(predictedClass, dry, normal, oily) {
   return score ? `${score.toFixed(2)}%` : "N/A";
 }
 
-module.exports = {
-  processImage,
-  processMultipleImages,
-  getUserSkin
-};
+module.exports = exports

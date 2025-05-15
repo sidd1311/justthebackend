@@ -152,3 +152,20 @@ exports.submitHealthForm = async (req, res) => {
         res.status(400).json({ message: 'Error storing health data', error: e.message });
     }
 };
+exports.getDepthAnalysis = async (req, res) => {
+    const userId = req.user.id;
+
+    try {
+        const db = await connectToDatabase();
+        const aiAnalysisCollection = db.collection('aihealthanalysis');
+
+        // Fetch AI analysis data for the user
+        const depthAnalysis = await aiAnalysisCollection.find({ userId: new ObjectId(userId) }).toArray();
+        console.log(depthAnalysis);
+        res.status(200).json({ message: 'Success', analysis: depthAnalysis });
+
+    } catch (e) {
+        console.error(e);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+};

@@ -1,5 +1,7 @@
 .env
 node_modules
-./python/venv
+./python/p1
+./python
 tmkx
 to_arnav
+python
